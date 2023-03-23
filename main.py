@@ -117,3 +117,82 @@ def calc():
         x += 1    
     print(score)
     showresult(score)
+ques = 1
+def selected():
+    global radiovar,user_answer
+    global lblquestion,r1,r2,r3,r4
+    global ques
+    x = radiovar.get()
+    user_answer.append(x)
+    radiovar.set(-1)
+    if ques < 5:
+        lblquestion.config(text=questions[indexes[ques]])
+        r1['text']= answer_choice[indexes[ques]][0]
+        r2['text']= answer_choice[indexes[ques]][1]
+        r3['text']= answer_choice[indexes[ques]][2]
+        r4['text']= answer_choice[indexes[ques]][3]
+        ques += 1
+    else:
+          print(indexes)
+          print(user_answer)
+          calc()
+
+
+
+def startquiz():
+    global lblquestion,r1,r2,r3,r4
+    lblquestion = Label(
+        root,
+        text=questions[indexes[0]],
+        font=("Consolas",18),
+        width=500,
+        justify="center",
+        wraplength=500,
+        background="#ffffff",
+    )
+    lblquestion.pack(pady=(100,30))
+
+    global radiovar
+    radiovar = IntVar()
+    radiovar.set(-1)
+
+    r1 = Radiobutton(
+        root,
+        text= answer_choice[indexes[0]][0],
+        font=("Times",12),
+        value = 0,
+        variable=radiovar,
+        command=selected,
+        background="#ffffff",
+    )
+    r1.pack(pady=5)
+    r2 = Radiobutton(
+        root,
+        text=answer_choice[indexes[0]][1],
+        font=("Times",12),
+        value = 1,
+        variable=radiovar,
+        command=selected,
+        background="#ffffff",
+    )
+    r2.pack(pady=5)
+    r3 = Radiobutton(
+        root,
+        text=answer_choice[indexes[0]][2],
+        font=("Times",12),
+        value = 2,
+        variable=radiovar,
+        command=selected,
+        background="#ffffff",
+    )
+    r3.pack(pady=5)
+    r4 = Radiobutton(
+        root,
+        text=answer_choice[indexes[0]][3],
+        font=("Times",12),
+        value = 3,
+        variable=radiovar,
+        command=selected,
+        background="#ffffff",
+    )
+    r4.pack(pady=5)
