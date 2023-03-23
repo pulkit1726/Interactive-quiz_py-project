@@ -1,4 +1,4 @@
-Interactive-quiz_py-project
+Interactive-quiz_py-Project.
 
 This repository contains interactive quiz 
 1) It is made using python programming language.
