@@ -27,3 +27,52 @@ answer_choice =[
     ["Gandhinagar","Mumbai","Mysuru","Kochi",],
     ["Future Group","D-Mart","Mahindra Retail","Big Basket",],
 ]
+answers = [2,2,1,0,0,2,0,1,1,0]
+user_answer = []
+
+
+indexes =[]
+def gen():
+    global indexes
+    while(len(indexes) < 5):
+        x = random.randint(0,9)
+        if x in indexes:
+            continue
+        else:
+            indexes.append(x)
+
+
+def showresult(score):
+    lblquestion.destroy()
+    r1.destroy()
+    r2.destroy()
+    r3.destroy()
+    r4.destroy()
+    labelimage = Label(
+        root,
+        background="#ffffff",
+        border=0,
+    )
+    labelimage.pack(pady=(50,3))
+
+
+    labelresulttext = Label(
+        root,
+        font = ("consolas",25), 
+        background="#ffffff",
+        border=0,  
+    )
+    labelresulttext.pack(pady=(50,4))
+    labelscore = Label(
+        root,
+        background="#ffffff",
+        border=0,
+    )
+    labelscore.pack()
+    labelresult = Label(
+        root, 
+        font = ("consolas",25),
+        background="#ffffff",
+        border=0,
+    )
+    labelresult.pack()
