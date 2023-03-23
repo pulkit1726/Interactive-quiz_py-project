@@ -76,3 +76,44 @@ def showresult(score):
         border=0,
     )
     labelresult.pack()
+if score >= 20:
+        img = PhotoImage(file="great.png")
+        labelimage.configure(image=img)
+        labelimage.image = img 
+        labelresulttext.configure(text="You Are Excellent !!")
+        img = PhotoImage(file="score.png")
+        labelscore.configure(image=img)
+        labelscore.image = img 
+        labelresult.configure(text=score)
+       
+    elif (score >= 10 and score <20):
+        img = PhotoImage(file="abc.png")
+        labelimage.configure(image=img)
+        labelimage.image = img
+        img = PhotoImage(file="score.png")
+        labelscore.configure(image=img)
+        labelscore.image = img 
+        labelresulttext.configure(text="You Are Better !!")
+        labelresult.configure(text=score)
+        
+    else:
+        img = PhotoImage(file="fail.png")
+        labelimage.configure(image=img)
+        labelimage.image = img 
+        labelresulttext.configure(text="Better Luck Next Time !! ")
+        img = PhotoImage(file="score.png")
+        labelscore.configure(image=img)
+        labelscore.image = img 
+        labelresult.configure(text=score)
+      
+
+def calc():
+    global indexes,user_answer,answers
+    x = 0
+    score = 0
+    for i in indexes:
+        if user_answer[x] == answers[i]:
+            score =  score + 5
+        x += 1    
+    print(score)
+    showresult(score)
