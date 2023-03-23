@@ -196,3 +196,39 @@ def startquiz():
         background="#ffffff",
     )
     r4.pack(pady=5)
+def startIspressed():
+    image_label.destroy()
+    labeltext.destroy()
+    btnstart.destroy()
+    gen()
+    startquiz()
+root = tkinter.Tk()
+root.title("Interactive Quiz")
+root.geometry("700x600")
+root.configure(bg='white')
+Photo1 = PhotoImage(file="2.png")
+image_label = Label(
+    root,
+    background="#ffffff",
+    image = Photo1
+    )
+
+image_label.pack()
+
+labeltext = Label(
+    root,
+    text = "Interactive Quiz",
+    font = ("comic sans MS",24,"bold"),
+    background="#ffffff",
+
+)
+labeltext.pack()
+
+Photo = PhotoImage(file="3.png")
+btnstart = Button(
+    root,
+    image=Photo,
+    command=startIspressed,
+)
+btnstart.pack(pady=(20,0))
+root.mainloop()
